@@ -1,0 +1,13 @@
+{
+  "name": "UniNow Dev CI Workflow",
+  "description": "UniNow Dev CI workflow template.",
+  "iconName": "example-icon",
+  "categories": [
+    "Go"
+  ],
+  "filePatterns": [
+    "package.json$",
+    "^Dockerfile",
+    ".*\\.md$"
+  ]
+}
