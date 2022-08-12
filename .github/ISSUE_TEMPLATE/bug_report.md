@@ -1,38 +1,121 @@
----
-name: Bug report
-about: Create a report to help us improve
-title: ''
-labels: ''
-assignees: ''
+name: 🐞 Bug Report
+description: File a bug report.
 
----
+labels: ["bug"]
 
-**Describe the bug**
-A clear and concise description of what the bug is.
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Hi. Thanks for taking the time to fill out this bug report!
 
-**To Reproduce**
-Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+        Before we start, be sure you are aware of the following points:
+        - Review our Troubleshooting and FAQ pages in the Wiki to ensure your issue isn't already solved by those steps.
+        - Avoid duplicating any existing issues which already track or resolve your problem.
+        - If your issue is specific to a certain plugin, create the issue on the plugin's GitHub page instead. Only create an issue here if you are sure it's our fault.
+        - Aim to find a descriptive and precise title for your bug report.
+        - Please add the `beta` label, if your issue is related to a current beta release.
+  - type: textarea
+    id: analysis
+    attributes:
+      label: Analysis
+      description: Please provide a concise description of the bug or issue you encounter.
+      placeholder: A clear and concise description of what the bug is.
+    validations:
+      required: true
 
-**Expected behavior**
-A clear and concise description of what you expected to happen.
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected Behavior
+      description: Please provide a clear and concise description of what you expected to happen.
+      placeholder: A clear and concise description of what you expected to happen.
+    validations:
+      required: true
 
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps To Reproduce
+      description: Please provide a description of how to reproduce the issue.
+      placeholder: |
+        A description of how to reproduce the bug.
+        1. In this setup or under those conditions ...
+        2. Run ...
+        3. Encounter error ...
+    validations:
+      required: true
 
-**Desktop (please complete the following information):**
- - OS: [e.g. iOS]
- - Browser [e.g. chrome, safari]
- - Version [e.g. 22]
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: |
+        Please provide relevant log output.
+        Be sure to **remove any sensitive information** (passwords, tokens, etc.).
+        If you have a lengthy log message, please use the file upload functionality in the `Additional Context` section to supply log files.
+      placeholder: Please paste logging output. Refer to the GitHub Wiki on how to enable `DEBUG` output.
+      render: markdown
+    validations:
+      required: true
 
-**Smartphone (please complete the following information):**
- - Device: [e.g. iPhone6]
- - OS: [e.g. iOS8.1]
- - Browser [e.g. stock browser, safari]
- - Version [e.g. 22]
+  - type: textarea
+    id: config
+    attributes:
+      label: Configuration
+      description: |
+        Please provide, if applicable, the content of your configuration files (e.g. `config.json`).
+        Be sure to **remove any sensitive information** (passwords, tokens, etc.).
+        If you have a lengthy configuration, please use the file upload functionality in the `Additional Context` section to supply config files.
+      placeholder: Please paste configuration ...
+      render: json
+    validations:
+      required: true
 
-**Additional context**
-Add any other context about the problem here.
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: |
+        Describe your Environment when running Homebridge software.
+        It should include Operating System version, runtime version and the version of the software itself.
+
+        The environment description might look like the following:
+          - **OS**: Ubuntu 20.04
+          - **Homebridge**: 1.3.6
+          - **Node**: 16.13.0 (output of `node -v`)
+          - **npm**: 8.1.0 (output of `npm -v`)
+      value: |
+        - OS:
+        - Software:
+        - Node:
+        - npm:
+    validations:
+      required: true
+
+  - type: dropdown
+    id: process-supervisor
+    attributes:
+      label: Process Supervisor
+      description: Which supervisor do you use to run Homebridge Software.
+      options:
+        - hb-service
+        - Docker (Mention image name in `Additional Context`)
+        - systemd
+        - init-d
+        - launchctl
+        - pm2
+        - other (Explain in `Additional Context`)
+        - not applicable
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: |
+        Please provide any additional context that might be relevant for your bug report.
+
+        It might include screenshots, configuration (files) or log output.
+      placeholder: Any additional context that might be relevant for your bug report.
