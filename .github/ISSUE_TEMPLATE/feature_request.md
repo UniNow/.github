@@ -1,20 +1,37 @@
----
-name: Feature request
-about: Suggest an idea for this project
-title: ''
-labels: ''
-assignees: ''
+name: 🚀 Feature Request
+description: Suggest an improvement or a new feature for this project.
 
----
+labels: ["enhancement"]
 
-**Is your feature request related to a problem? Please describe.**
-A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Hi. Thanks for taking the time to contribute to the Homebridge project!
 
-**Describe the solution you'd like**
-A clear and concise description of what you want to happen.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Current Situation
+      description: Please provide an overview of the current situation and illustrate potential problems or shortcomings.
+      placeholder: A clear and concise description of the problem or situation that should be addressed.
+    validations:
+      required: true
 
-**Describe alternatives you've considered**
-A clear and concise description of any alternative solutions or features you've considered.
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Change
+      description: Please provide a clear and concise description of the solution or change you propose and how it should work.
+      placeholder: A clear and concise description of the solution or change you propose and how it should work.
+    validations:
+      required: true
 
-**Additional context**
-Add any other context or screenshots about the feature request here.
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: |
+        Please provide any additional context that might be relevant for your request.
+        You may add screenshots, log output or configuration files.
+      placeholder: Any additional context that might be relevant for your request.
