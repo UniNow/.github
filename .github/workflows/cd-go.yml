@@ -22,7 +22,7 @@ on:
 jobs:
   build:
     timeout-minutes: 15
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     steps:
       - name: Install Go
         uses: actions/setup-go@v2
